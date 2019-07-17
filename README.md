@@ -1,4 +1,4 @@
-# Meetapp Frontend | Bootcamp GoStack Module 9 Challange
+# Meetapp Frontend | Bootcamp GoStack Module 9 Challenge
 In this challenge, I will build the frontend of the Meetapp application with ReactJS by using the API developed in this repository (<a href="https://github.com/AugustoMarcelo/meetapp">Meetup Backend</a>).
 The application will be created from scratch by using `create-react-app` and code patters tools like Reactotron, Redux and Redux Saga.
 
