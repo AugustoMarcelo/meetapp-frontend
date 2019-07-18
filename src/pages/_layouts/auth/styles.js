@@ -27,10 +27,22 @@ export const Content = styled.div`
             padding: 0 15px;
             color: #fff;
             margin: 0 0 10px;
+            transition: border 0.2s;
+
+            &:focus {
+                border: 1px solid #cecece;
+            }
 
             &::placeholder {
                 color: rgba(255, 255, 255, 0.7);
             }
+        }
+
+        span {
+            color: #f94d6a;
+            align-self: flex-start;
+            margin: 0 0 10px;
+            font-weight: bold;
         }
 
         button {
