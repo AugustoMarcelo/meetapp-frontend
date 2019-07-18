@@ -1,5 +1,5 @@
-import styled from 'styled-components';
-import { darken } from 'polished';
+import styled, { keyframes } from 'styled-components';
+import { darken, lighten } from 'polished';
 
 export const Wrapper = styled.div`
     height: 100%;
@@ -7,6 +7,15 @@ export const Wrapper = styled.div`
     display: flex;
     justify-content: center;
     align-items: center;
+`;
+
+const rotate = keyframes`
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
 `;
 
 export const Content = styled.div`
@@ -56,7 +65,16 @@ export const Content = styled.div`
             font-size: 16px;
             transition: background 0.2s;
 
-            &:hover {
+            &[disabled] {
+                cursor: not-allowed;
+                background: ${lighten(0.08, '#f94d6a')};
+
+                svg {
+                    animation: ${rotate} 2s linear infinite;
+                }
+            }
+
+            &:hover:not([disabled]) {
                 background: ${darken(0.08, '#f94d6a')};
             }
         }
