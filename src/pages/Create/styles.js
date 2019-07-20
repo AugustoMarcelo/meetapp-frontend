@@ -3,7 +3,8 @@ import { darken } from 'polished';
 
 export const Container = styled.div`
     max-width: 900px;
-    margin: 50px auto;
+    margin: 50px auto 0;
+    padding-bottom: 50px;
 
     form {
         display: flex;
@@ -29,6 +30,21 @@ export const Container = styled.div`
         }
 
         textarea {
+            padding: 15px !important;
+
+            &::placeholder {
+                padding: 0 !important;
+            }
+        }
+
+        span {
+            color: #f94d6a;
+            align-self: flex-start;
+            margin: 0 0 10px;
+            font-weight: bold;
+        }
+
+        textarea {
             background: rgba(0, 0, 0, 0.2);
             border: 0;
             border-radius: 4px;
@@ -48,7 +64,7 @@ export const Container = styled.div`
             }
         }
 
-        button {
+        > button {
             align-self: flex-end;
             padding: 11px;
             margin-top: 10px;

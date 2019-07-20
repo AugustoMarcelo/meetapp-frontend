@@ -8,7 +8,7 @@ import api from '~/services/api';
 import { Container, Meetup, Date } from './styles';
 
 export default function Dashboard() {
-    const [mymeetyps, setMymeetups] = useState([]);
+    const [mymeetups, setMymeetups] = useState([]);
 
     useEffect(() => {
         async function loadMeetups() {
@@ -43,17 +43,33 @@ export default function Dashboard() {
                 </Link>
             </header>
             <ul>
-                {mymeetyps.map(meetup => (
-                    <Link to={`details/${meetup.id}`}>
-                        <Meetup key={meetup.id}>
-                            <strong>{meetup.title}</strong>
-                            <Date>
-                                <span>{meetup.dateFormatted}</span>
-                                <MdChevronRight size={24} color="#fff" />
-                            </Date>
-                        </Meetup>
-                    </Link>
-                ))}
+                {mymeetups.length ? (
+                    mymeetups.map(meetup => (
+                        <Link to={`details/${meetup.id}`} key={meetup.id}>
+                            <Meetup>
+                                <strong>{meetup.title}</strong>
+                                <Date>
+                                    <span>{meetup.dateFormatted}</span>
+                                    <MdChevronRight size={24} color="#fff" />
+                                </Date>
+                            </Meetup>
+                        </Link>
+                    ))
+                ) : (
+                    <p
+                        style={{
+                            marginTop: 20,
+                            background: 'rgba(0,0,0,0.2)',
+                            borderRadius: '4px',
+                            padding: 15,
+                            display: 'flex',
+                            justifyContent: 'center',
+                            color: 'rgba(255,255,255,0.6)',
+                        }}
+                    >
+                        No meetups found...
+                    </p>
+                )}
             </ul>
         </Container>
     );

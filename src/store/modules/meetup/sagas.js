@@ -22,4 +22,21 @@ export function* addMeetup({ payload }) {
     }
 }
 
-export default all([takeLatest('@meetup/ADD_REQUEST', addMeetup)]);
+export function* cancelMeetup({ payload }) {
+    try {
+        const { id } = payload;
+
+        yield call(api.delete, `mymeetups/${id}`);
+
+        toast.success('Meetup was deleted.');
+
+        history.push('/dashboard');
+    } catch (error) {
+        toast.error('Delete meetup failed.');
+    }
+}
+
+export default all([
+    takeLatest('@meetup/ADD_REQUEST', addMeetup),
+    takeLatest('@meetup/CANCEL_REQUEST', cancelMeetup),
+]);

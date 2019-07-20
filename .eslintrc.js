@@ -36,6 +36,7 @@ module.exports = {
       'react-native/no-raw-text': 'off',
       'no-param-reassign': 'off',
       'no-underscore-dangle': 'off',
+      'react/require-default-props': 'off',
       camelcase: 'off',
       'no-console': ['error', { allow: ['tron'] }],
       'react-hooks/rules-of-hooks': 'error',
