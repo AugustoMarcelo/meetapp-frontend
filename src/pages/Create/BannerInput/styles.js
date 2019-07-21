@@ -7,6 +7,22 @@ export const Container = styled.div`
     label {
         cursor: pointer;
         position: relative;
+        display: flex;
+
+        div {
+            display: flex;
+            flex-direction: column;
+            position: absolute;
+            bottom: 100px;
+            left: calc(50% - 50px);
+            align-items: center;
+            justify-content: center;
+
+            span {
+                font-weight: normal;
+                color: rgb(255, 255, 255, 0.3);
+            }
+        }
 
         img {
             height: 300px;
@@ -24,17 +40,14 @@ export const Container = styled.div`
             display: none;
         }
 
-        span {
-            display: none;
-        }
+        &:hover {
+            svg {
+                color: #fff !important;
+            }
 
-        &:hover span {
-            display: block;
-            position: absolute;
-            color: #fff;
-            bottom: 150px;
-            left: 50%;
-            color: rgba(255, 255, 255, 0.7);
+            span {
+                color: #fff;
+            }
         }
     }
 `;

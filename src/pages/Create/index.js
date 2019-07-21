@@ -6,6 +6,7 @@ import DatePicker from 'react-datepicker';
 import { parseISO } from 'date-fns';
 import pt from 'date-fns/locale/pt';
 import * as Yup from 'yup';
+import { MdAddCircleOutline } from 'react-icons/md';
 
 import api from '~/services/api';
 import BannerInput from './BannerInput';
@@ -95,10 +96,14 @@ export default function Create({ match }) {
                     timeCaption="Horário"
                     placeholderText="Meetup date"
                     locale={pt}
+                    style={{ width: '100%' }}
                 />
 
                 <Input name="location" placeholder="Meetup location" />
-                <button type="submit">Save</button>
+                <button type="submit">
+                    <MdAddCircleOutline size={20} color="#fff" />
+                    Save
+                </button>
             </Form>
         </Container>
     );

@@ -1,6 +1,7 @@
 import React, { useState, useRef, useEffect } from 'react';
 import { useField } from '@rocketseat/unform';
 import PropTypes from 'prop-types';
+import { MdCameraAlt } from 'react-icons/md';
 
 import api from '~/services/api';
 
@@ -46,6 +47,10 @@ export default function BannerInput({ imageURL, imageID }) {
     return (
         <Container>
             <label htmlFor="banner">
+                <div>
+                    <MdCameraAlt size={54} color="rgba(255,255,255,0.3)" />
+                    <span>Select a image</span>
+                </div>
                 <img src={preview || mask} alt="Banner Input" />
                 <input
                     type="file"
@@ -55,7 +60,7 @@ export default function BannerInput({ imageURL, imageID }) {
                     onChange={handleChange}
                     ref={ref}
                 />
-                <span>Select a image</span>
+                {/* <span>Select a image</span> */}
             </label>
         </Container>
     );

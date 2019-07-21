@@ -65,8 +65,10 @@ export const Container = styled.div`
         }
 
         > button {
+            display: flex;
             align-self: flex-end;
-            padding: 11px;
+            align-items: center;
+            padding: 11px 15px;
             margin-top: 10px;
             height: 42px;
             background: #f94d6a;
@@ -75,6 +77,10 @@ export const Container = styled.div`
             border-radius: 4px;
             font-size: 16px;
             transition: background 0.2s;
+
+            svg {
+                margin-right: 10px;
+            }
 
             &:hover {
                 background: ${darken(0.08, '#f94d6a')};
