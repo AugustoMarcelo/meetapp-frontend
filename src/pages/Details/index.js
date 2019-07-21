@@ -1,12 +1,13 @@
 import React, { useEffect, useState } from 'react';
 import { useDispatch } from 'react-redux';
+import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import { MdEvent, MdPlace, MdDeleteForever, MdEdit } from 'react-icons/md';
 import { parseISO, format } from 'date-fns';
 import pt from 'date-fns/locale/pt';
 
 import api from '~/services/api';
-import { cancelRequest, editRequest } from '~/store/modules/meetup/actions';
+import { cancelRequest } from '~/store/modules/meetup/actions';
 
 import mask from '~/assets/mask.png';
 import {
@@ -44,18 +45,16 @@ export default function Details({ match }) {
         dispatch(cancelRequest(id));
     }
 
-    function handleEdit() {
-        dispatch(editRequest(id));
-    }
-
     return (
         <Container>
             <header>
                 <h1>{meetup.title}</h1>
                 <div>
-                    <EditButton type="button" onClick={handleEdit}>
-                        <MdEdit size={20} color="fff" /> Edit
-                    </EditButton>
+                    <Link to={`/edit/${id}`}>
+                        <EditButton type="button">
+                            <MdEdit size={20} color="fff" /> Edit
+                        </EditButton>
+                    </Link>
                     <CancelButton type="button" onClick={handleCancel}>
                         <MdDeleteForever size={20} color="#fff" /> Cancel
                     </CancelButton>

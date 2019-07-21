@@ -5,10 +5,10 @@ export function addRequest(title, description, date, location, banner_id) {
     };
 }
 
-export function editRequest(id) {
+export function editRequest(title, description, date, location, banner_id, id) {
     return {
         type: '@meetup/EDIT_REQUEST',
-        payload: { id },
+        payload: { title, description, date, location, banner_id, id },
     };
 }
 

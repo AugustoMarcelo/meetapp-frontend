@@ -1,18 +1,24 @@
 import React, { useState, useRef, useEffect } from 'react';
 import { useField } from '@rocketseat/unform';
+import PropTypes from 'prop-types';
 
 import api from '~/services/api';
 
 import mask from '~/assets/mask.png';
 import { Container } from './styles';
 
-export default function BannerInput() {
+export default function BannerInput({ imageURL, imageID }) {
     const { defaultValue, registerField } = useField('banner');
 
     const [file, setFile] = useState(defaultValue && defaultValue.id);
     const [preview, setPreview] = useState(defaultValue && defaultValue.url);
 
     const ref = useRef();
+
+    useEffect(() => {
+        setPreview(imageURL);
+        setFile(imageID);
+    }, [imageURL, imageID]);
 
     useEffect(() => {
         if (ref.current) {
@@ -54,3 +60,8 @@ export default function BannerInput() {
         </Container>
     );
 }
+
+BannerInput.propTypes = {
+    imageURL: PropTypes.string,
+    imageID: PropTypes.number,
+};

@@ -36,7 +36,28 @@ export function* cancelMeetup({ payload }) {
     }
 }
 
+export function* editMeetup({ payload }) {
+    try {
+        const { title, description, date, location, banner_id, id } = payload;
+
+        yield call(api.put, `mymeetups/${id}`, {
+            title,
+            description,
+            date,
+            location,
+            banner_id,
+        });
+
+        toast.success('Meetup updated success!');
+
+        history.push(`/details/${id}`);
+    } catch (error) {
+        toast.error('Update meetup failed.');
+    }
+}
+
 export default all([
     takeLatest('@meetup/ADD_REQUEST', addMeetup),
+    takeLatest('@meetup/EDIT_REQUEST', editMeetup),
     takeLatest('@meetup/CANCEL_REQUEST', cancelMeetup),
 ]);
