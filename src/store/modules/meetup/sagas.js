@@ -32,7 +32,7 @@ export function* cancelMeetup({ payload }) {
 
         history.push('/dashboard');
     } catch (error) {
-        toast.error('Delete meetup failed.');
+        toast.error(error.response.data.error);
     }
 }
 
