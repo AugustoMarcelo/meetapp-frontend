@@ -11,16 +11,22 @@ The user can authenticate yourself using e-mail and password.
 THe user can register with name, e-mail and password.
 
 ### Dashboard
-The user can list the meetups organized by him and click to see the details. 
-It's possible navigate to the meetup creation page. 
+The user can list the meetups organized by him and click to see the details.
+It's possible navigate to the meetup creation page.
 
 ### Details
 The user can see the details of a registered meetup and edit or cancel a meetup.
 
 ### New / Edit
-The user can register or edit meetups informations organized by him. 
+The user can register or edit meetups informations organized by him.
 The user can view the image of the selected banner.
 All fields are validated.
 
 ### Profile
 The user can edit your registered informations. All fields are validated.
+
+### Running application
+
+ - To run the application, you must execute the command `yarn`. It will install all the necessary dependencies for the application execution;
+ - This application access a backend that you can find <a href="https://github.com/AugustoMarcelo/meetapp" target="_blank">Here</a>.
+ - Thus, just run the command `yarn start` to run the application.
