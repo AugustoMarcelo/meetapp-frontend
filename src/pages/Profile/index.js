@@ -27,7 +27,7 @@ export default function Profile() {
                 />
                 <Input
                     type="password"
-                    name="newPassword"
+                    name="password"
                     placeholder="New password"
                 />
                 <Input
