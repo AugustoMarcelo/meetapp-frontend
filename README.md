@@ -41,8 +41,6 @@
 
 ## 💻 Instruções para execução
 
-> A aplicação teve o desenvolvimento focado em dispositivos ANDROID e foi atualizada para versão 5 do react-navigation.
-
 - Faça o download do projeto:
 ```bash
   # clonando o repositório
