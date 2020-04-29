@@ -46,19 +46,13 @@
 - Faça o download do projeto:
 ```bash
   # clonando o repositório
-  git clone https://github.com/AugustoMarcelo/meetapp-mobile.git
+  git clone https://github.com/AugustoMarcelo/meetapp-frontend.git
 
   # acessando a pasta
-  cd meetapp-mobile
+  cd meetapp-frontend
 
   # fazendo download das dependências
   yarn
-
-  # proxy reverso
-  adb reverse tcp:3333 tcp:3333
-
-  # inicializando a aplicação
-  npx react-native run-android
 ```
 
 ## 📸 Preview
